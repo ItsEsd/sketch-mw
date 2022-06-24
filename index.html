@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Sketchpad | MASTROWALL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="images/mwalllogo.png" type="image/png" sizes="16x16">
+    <script src="script.js"></script>
+    </head>
+    <style>
+      body,html{
+        background-color: white;
+      }
+        .dataimg{
+            top:0px;
+            left:0px;
+            position: absolute;
+        }
+        .ptro-bar-right .ptro-icon-btn:nth-child(3) {
+           display: none;
+             }
+    </style>
+<body>
+<script>
+var d = new Date();
+var filename = d.toISOString();
+var ptro = Painterro({
+  saveHandler: function (image, done) {
+var url =  image.asDataURL();
+var anchor = document.createElement("a");
+anchor.href = url;
+anchor.download = filename +".png";
+anchor.click();
+done(false);
+  }
+});
+
+ptro.show();
+
+</script>
+</body>
+</html>
