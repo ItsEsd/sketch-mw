@@ -35,8 +35,43 @@
         .ptro-bar-right .ptro-icon-btn:nth-child(3) {
            display: none;
              }
+      .footcon{
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      bottom:0px;
+      right:10px;
+      position: fixed;
+      padding:5px;
+      font-size:12px;
+      color:grey;
+      z-index: 100;
+      display: block;
+      }     
+      .footcon a{
+      text-decoration: none;
+      color:grey;
+      cursor: pointer;
+      }  
+      .footcon a:hover{
+    opacity: 0.7;
+      } 
+      .footcon .titl{
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size:14px;
+      font-weight: 600;
+      cursor: pointer;
+   }
+   .titl:hover{
+    opacity: 0.7;
+   }
+   @media only screen and (max-width: 900px) {
+    .footcon{
+      display: none;
+    }
+}
     </style>
 <body>
+  <div class="footcon">
+    <span class="titl" onclick="copyToClipboardAndNotify()" title="Copy link to Clipboard">Sketchpad</span> | <font size="2"><a target="_blank" href="https://mastrowall.com/privacy-policy">Privacy</a> | <a target="_blank" href="https://mastrowall.com/terms-and-conditions">Terms</a> ©️ <a target="_blank" href="https://mastrowall.com/">MASTROWALL</a></font></div>
 <script>
 var d = new Date();
 var filename = d.toISOString();
@@ -54,5 +89,17 @@ done(false);
 ptro.show();
 
 </script>
+<script>
+  function copyToClipboardAndNotify() {
+      var tempInput = document.createElement("input");
+      tempInput.value = "https://sketch.mastrowall.com/";
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999); 
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Link copied to clipboard: https://sketch.mastrowall.com/");
+  }
+  </script>
 </body>
 </html>
