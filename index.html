@@ -1,105 +1,156 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-<title>Sketchpad | MASTROWALL</title>
-<meta name="title" content="Sketchpad | MASTROWALL">
-<meta name="description" content="Painting or Drawing Tool">
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@42cc56591b4fe76f92443bce21890030a13160ec/images/favicon-logos/logoRecBWsvg.svg" type="image/png" sizes="16x16">
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sketch.mastrowall.com/">
-<meta property="og:title" content="Sketchpad | MASTROWALL">
-<meta property="og:description" content="Painting or Drawing Tool">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@22374d9ea666414c343a713211f7eca1d77a6bf0/images/mastro-meta.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Sketchpad | MASTROWALL</title>
+    <meta name="title" content="Sketchpad | MASTROWALL" />
+    <meta name="description" content="Painting or Drawing Tool" />
+    <link
+      rel="icon"
+      href="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@42cc56591b4fe76f92443bce21890030a13160ec/images/favicon-logos/logoRecBWsvg.svg"
+      type="image/png"
+      sizes="16x16"
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sketch.mastrowall.com/" />
+    <meta property="og:title" content="Sketchpad | MASTROWALL" />
+    <meta property="og:description" content="Painting or Drawing Tool" />
+    <meta
+      property="og:image"
+      content="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@22374d9ea666414c343a713211f7eca1d77a6bf0/images/mastro-meta.png"
+    />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://sketch.mastrowall.com/">
-<meta property="twitter:title" content="Sketchpad | MASTROWALL">
-<meta property="twitter:description" content="Painting or Drawing Tool">
-<meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@22374d9ea666414c343a713211f7eca1d77a6bf0/images/mastro-meta.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sketch.mastrowall.com/" />
+    <meta property="twitter:title" content="Sketchpad | MASTROWALL" />
+    <meta property="twitter:description" content="Painting or Drawing Tool" />
+    <meta
+      property="twitter:image"
+      content="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@22374d9ea666414c343a713211f7eca1d77a6bf0/images/mastro-meta.png"
+    />
     <script src="script.js"></script>
-    </head>
-    <style>
-      body,html{
-        background-color: white;
-      }
-        .dataimg{
-            top:0px;
-            left:0px;
-            position: absolute;
-        }
-        .ptro-bar-right .ptro-icon-btn:nth-child(3) {
-           display: none;
-             }
-      .footcon{
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
-      bottom:0px;
-      right:10px;
-      position: fixed;
-      padding:5px;
-      font-size:12px;
-      color:grey;
-      z-index: 100;
-      display: block;
-      }     
-      .footcon a{
-      text-decoration: none;
-      color:grey;
-      cursor: pointer;
-      }  
-      .footcon a:hover{
-    opacity: 0.7;
-      } 
-      .footcon .titl{
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
-      font-size:14px;
-      font-weight: 600;
-      cursor: pointer;
-   }
-   .titl:hover{
-    opacity: 0.7;
-   }
-   @media only screen and (max-width: 900px) {
-    .footcon{
+  </head>
+  <style>
+    body,
+    html {
+      background-color: white;
+    }
+    .dataimg {
+      top: 0px;
+      left: 0px;
+      position: absolute;
+    }
+    .ptro-bar-right .ptro-icon-btn:nth-child(3) {
       display: none;
     }
-}
-    </style>
-<body>
-  <div class="footcon">
-    <span class="titl" onclick="copyToClipboardAndNotify()" title="Copy link to Clipboard">Sketchpad</span> | <font size="2"><a target="_blank" href="https://mastrowall.com/privacy-policy">Privacy</a> | <a target="_blank" href="https://mastrowall.com/terms-and-conditions">Terms</a> ©️ <a target="_blank" href="https://mastrowall.com/">MASTROWALL</a></font></div>
-<script>
-var d = new Date();
-var filename = d.toISOString();
-var ptro = Painterro({
-  saveHandler: function (image, done) {
-var url =  image.asDataURL();
-var anchor = document.createElement("a");
-anchor.href = url;
-anchor.download = filename +".png";
-anchor.click();
-done(false);
-  }
-});
+    .footcon {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      bottom: 0px;
+      right: 10px;
+      position: fixed;
+      padding: 5px;
+      font-size: 12px;
+      color: grey;
+      z-index: 100;
+      display: block;
+      width: 100%;
+      margin: 0px;
+      text-align: right;
+    }
+    .footcon a {
+      text-decoration: none;
+      color: grey;
+      cursor: pointer;
+    }
+    .footcon a:hover {
+      opacity: 0.7;
+    }
+    .footcon .titl {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .titl:hover {
+      opacity: 0.7;
+    }
+    .asstvndr {
+      float: left;
+      margin-left: 20px;
+      font-size: 12px;
+      line-height: normal;
+    }
+    .asstvndr img {
+      width: 12px;
+      height: 12px;
+      margin-top: 6px;
+    }
+    @media only screen and (max-width: 900px) {
+      .footcon {
+        display: none;
+      }
+    }
+  </style>
+  <body>
+    <div class="footcon">
+      <span class="asstvndr"
+        ><a href="https://github.com/devforth/painterro" target="_blank"
+          ><img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+          />
+          Painterro | JavaScript painting plugin</a
+        ></span
+      >
+      <span
+        class="titl"
+        onclick="copyToClipboardAndNotify()"
+        title="Copy link to Clipboard"
+        >Sketchpad</span
+      >
+      |
+      <font size="2"
+        ><a target="_blank" href="https://mastrowall.com/privacy-policy"
+          >Privacy</a
+        >
+        |
+        <a target="_blank" href="https://mastrowall.com/terms-and-conditions"
+          >Terms</a
+        >
+        ©️
+        <a target="_blank" href="https://mastrowall.com/">MASTROWALL</a></font
+      >
+    </div>
+    <script>
+      var d = new Date();
+      var filename = d.toISOString();
+      var ptro = Painterro({
+        saveHandler: function (image, done) {
+          var url = image.asDataURL();
+          var anchor = document.createElement("a");
+          anchor.href = url;
+          anchor.download = filename + ".png";
+          anchor.click();
+          done(false);
+        },
+      });
 
-ptro.show();
-
-</script>
-<script>
-  function copyToClipboardAndNotify() {
-      var tempInput = document.createElement("input");
-      tempInput.value = "https://sketch.mastrowall.com/";
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      tempInput.setSelectionRange(0, 99999); 
-      document.execCommand("copy");
-      document.body.removeChild(tempInput);
-      alert("Link copied to clipboard: https://sketch.mastrowall.com/");
-  }
-  </script>
-</body>
+      ptro.show();
+    </script>
+    <script>
+      function copyToClipboardAndNotify() {
+        var tempInput = document.createElement("input");
+        tempInput.value = "https://sketch.mastrowall.com/";
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Link copied to clipboard: https://sketch.mastrowall.com/");
+      }
+    </script>
+  </body>
 </html>
